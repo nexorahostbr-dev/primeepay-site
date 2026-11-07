@@ -111,7 +111,7 @@ footer{background:#030816;color:#8fa0c4;padding:40px 0 50px;font-size:13px}foote
 <nav><div class="wrap">
   <a class="logo" href="#top" aria-label="PrimeePay"><svg><use href="#mark"/></svg><span>Primee</span><b>Pay</b></a>
   <ul><li><a href="#alavancas">Oportunidades</a></li><li><a href="#prateleira">Recursos</a></li><li><a href="#calc">Simulador</a></li><li><a href="#faq">Dúvidas</a></li></ul>
-  <a class="btn c sm" href="#contato">Quero ativar</a>
+  <a class="btn c sm" href="/cadastro">Quero ativar</a>
 </div></nav>
 
 <header class="hero" id="top"><div class="wrap hg">
@@ -119,7 +119,7 @@ footer{background:#030816;color:#8fa0c4;padding:40px 0 50px;font-size:13px}foote
     <p class="kick">Para lojas de celular, assistências e revendas</p>
     <h1>Venda para quem hoje sai da sua loja <span class="gt">sem comprar.</span></h1>
     <p class="sub">Cada cliente sem limite no cartão é uma venda que vai para o concorrente. Com crediário próprio, você aprova, parcela o iPhone em até 24x e fica com os juros.</p>
-    <div class="cta"><a class="btn c" href="#contato">Quero vender mais</a><a class="btn o" href="#calc">Simular meu faturamento</a></div>
+    <div class="cta"><a class="btn c" href="/cadastro">Cadastrar minha loja grátis</a><a class="btn o" href="#calc">Simular meu faturamento</a></div>
     <p class="micro"><span>R$ 0 de adesão</span><span>Você decide quem aprova</span><span>Validação em até 48h</span></p>
   </div>
   <svg class="in in2" viewBox="0 0 360 440" role="img" aria-label="iPhone com venda parcelada aprovada e Pix recebido">
@@ -265,6 +265,7 @@ footer{background:#030816;color:#8fa0c4;padding:40px 0 50px;font-size:13px}foote
     <label>Cidade e estado<input name="cidade" required autocomplete="address-level2"></label>
     <label>Você é<select name="perfil"><option>Dono de loja de celular</option><option>Assistência técnica</option><option>Revenda ou distribuidor</option><option>Quero abrir uma loja</option></select></label>
     <label>Já vende iPhone?<select name="ip"><option>Sim</option><option>Ainda não</option></select></label>
+    <label>Sua loja tem CNPJ?<select name="cnpj"><option>Sim</option><option>Ainda não</option></select></label>
     <label>Celulares vendidos por mês<select name="vol"><option>Até 20</option><option>21 a 50</option><option>51 a 100</option><option>Mais de 100</option></select></label>
     <label>O que mais trava suas vendas hoje?<select name="dor"><option>Clientes sem limite ou score</option><option>Calote e inadimplência</option><option>Cobrança manual</option><option>Quero vender iPhone parcelado</option></select></label>
     <label style="display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px"><input type="checkbox" name="ok" required style="width:20px;min-height:20px;margin-top:2px">Concordo em ser contatado pela PrimeePay sobre crediário próprio.</label>
@@ -276,6 +277,7 @@ footer{background:#030816;color:#8fa0c4;padding:40px 0 50px;font-size:13px}foote
 <footer><div class="wrap">
   <a class="logo" href="#top" style="margin-bottom:14px"><svg><use href="#mark"/></svg><span>Primee</span><b>Pay</b></a>
   <p>Matriz: Cabo Frio, RJ · Atendimento nacional · WhatsApp: (22) 98832-7766 · www.primeepay.com.br</p>
+  <p>A PrimeePay é parceira indicadora da AurusPay, plataforma operada pela Aurus Smart LTDA (CNPJ 66.278.877/0001-57). Não representa a empresa nem recebe valores em nome dela.</p>
   <p>A PrimeePay é uma marca comercial independente. Não é instituição financeira nem operadora de telecomunicações. As soluções são fornecidas por empresas parceiras e as condições são confirmadas no atendimento. Apple, iPhone, iPad e Android são marcas de seus respectivos titulares, citadas apenas para indicar compatibilidade.</p>
   <p>Aviso: o bloqueio remoto de aparelhos por inadimplência é tema em debate no Judiciário. Cada operação deve ter contrato claro, consentimento do cliente e revisão jurídica. Esta página não constitui aconselhamento jurídico ou financeiro.</p>
   <p>© 2026 PrimeePay.</p>
@@ -317,7 +319,7 @@ calc();
 document.getElementById("f").addEventListener("submit",function(e){
   e.preventDefault();
   var d=new FormData(e.target);
-  var t="Olá, sou "+d.get("nome")+" ("+d.get("perfil")+"), da loja "+d.get("loja")+" em "+d.get("cidade")+". Vendo "+d.get("vol")+" celulares por mês. Já vende iPhone: "+d.get("ip")+". Meu maior problema hoje: "+d.get("dor")+". Quero o diagnóstico gratuito do crediário próprio.";
+  var t="Olá, sou "+d.get("nome")+" ("+d.get("perfil")+"), da loja "+d.get("loja")+" em "+d.get("cidade")+". Vendo "+d.get("vol")+" celulares por mês. Já vende iPhone: "+d.get("ip")+". Loja com CNPJ: "+d.get("cnpj")+". Meu maior problema hoje: "+d.get("dor")+". Quero o diagnóstico gratuito do crediário próprio.";
   var a=document.createElement("a");
   a.href="https://wa.me/5522988327766?text="+encodeURIComponent(t);
   a.target="_blank";a.rel="noopener";
